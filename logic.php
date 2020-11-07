@@ -10,7 +10,7 @@
 class logic{
   public $url = null;
   private $use_proxy = true; // change to `false` if having any trouble with proxy server
-  public $proxy = "69.28.62.166:3128"; // important
+  public $proxy = "190.217.29.2:8080"; // important
   
   public function __construct(){
     
