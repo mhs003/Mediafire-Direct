@@ -5,12 +5,14 @@
  * @file: logic.php
  * @class: logic
  * @date: 7/11/2020
+ * @update: 25/11/2020
  */
  
 class logic{
   public $url = null;
   private $use_proxy = true; // change to `false` if having any trouble with proxy server
-  public $proxy = "190.217.29.2:8080"; // important
+  // important
+  public $proxy = "A_PROXY_IP_WITH_PORT";
   
   public function __construct(){
     
@@ -43,7 +45,7 @@ class logic{
       ];
     } else {
       $rhtml = preg_replace('/\n/', '', $html);
-      $rlink = preg_replace('/(.*)<a class="input popsok"                        aria-label="Download file"                        href="(.*)">                        Download(.*)/', '$2', $rhtml);
+      $rlink = preg_replace('/(.*)<a class="input popsok"                        aria-label="Download file"                        href="(.*)"                        id="downloadButton">                        Download (.*)/', '$2', $rhtml);
       $data = [
         'error' => false,
         'file_link' => $rlink
